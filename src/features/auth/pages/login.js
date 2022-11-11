@@ -21,7 +21,7 @@ function Login() {
 	};
 
 	return (
-		<div className="h-screen w-full flex flex-col gap-3 justify-center items-center ">
+		<div className="h-screen w-full flex flex-col gap-3 justify-center items-center bg-gradient-to-r from-violet-500 to-fuchsia-500">
 			<h1 className="font-bold text-3xl">Login</h1>
 			<LoginCard>
 				<LoginForm onFormSubmit={onFormSubmit} loading={loading} />

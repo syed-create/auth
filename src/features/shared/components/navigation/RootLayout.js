@@ -1,12 +1,15 @@
 import React from "react";
 import ProtectedRoutes from "../../../../routes/ProtectedRoutes";
+import Layout from "../layout/Layout";
 import Header from "./Header";
 
 function RootLayout() {
 	return (
-		<div>
+		<div className="h-screen">
 			<Header />
-			<ProtectedRoutes />
+			<Layout>
+				<ProtectedRoutes />
+			</Layout>
 		</div>
 	);
 }

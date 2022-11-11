@@ -1,6 +1,7 @@
 import React from "react";
 import { ValidateEmail, ValidatePassword } from "../../../shared/validation";
 import { Button, Form, Input } from "antd";
+import { MailOutlined, LockOutlined } from "@ant-design/icons";
 
 function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 	return (
@@ -15,7 +16,11 @@ function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 					},
 				]}
 			>
-				<Input placeholder="Enter user email" type="email" />
+				<Input
+					prefix={<MailOutlined className="text-[#00000040]" />}
+					placeholder="Enter user email"
+					type="email"
+				/>
 			</Form.Item>
 			<Form.Item
 				label="Password"
@@ -27,14 +32,18 @@ function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 					},
 				]}
 			>
-				<Input placeholder="Enter password" type="password" />
+				<Input.Password
+					prefix={<LockOutlined className="text-[#00000040]" />}
+					placeholder="Enter password"
+				/>
 			</Form.Item>
-			<Form.Item className="flex justify-center">
+			<Form.Item className="">
 				<Button
-					className="!bg-[#1890ff] hover:scale-110 hover:!bg-opacity-80 !flex !items-center"
+					className="!border-purple-500 hover:!from-purple-600 !transition-all hover:!to-pink-600 hover:!bg-opacity-80 !rounded-3xl !bg-gradient-to-r from-purple-500 to-pink-500"
 					type="primary"
 					htmlType="submit"
 					loading={loading}
+					block
 				>
 					Login
 				</Button>
