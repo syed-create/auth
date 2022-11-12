@@ -18,7 +18,7 @@ export const ValidateEmail = (_, value) => {
 		return Promise.reject(new Error("Please enter email!"));
 	}
 	if (String(value).toLowerCase().match(newMailFormatRegex)) {
-		return Promise.resolve();
+		return Promise.resolve(true);
 	}
-	return Promise.reject(new Error("Please enter valid email address!"));
+	return Promise.reject(false);
 };

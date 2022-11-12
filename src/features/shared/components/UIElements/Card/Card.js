@@ -1,6 +1,6 @@
 import React from "react";
 
-function LoginCard({ children, className }) {
+function Card({ children, className }) {
 	return (
 		<div
 			className={
@@ -13,4 +13,4 @@ function LoginCard({ children, className }) {
 	);
 }
 
-export default LoginCard;
+export default Card;

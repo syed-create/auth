@@ -1,6 +1,6 @@
 import React from "react";
 import ProtectedRoutes from "../../../../routes/ProtectedRoutes";
-import Layout from "../layout/Layout";
+import Layout from "../UIElements/Layout/Layout";
 import Header from "./Header";
 
 function RootLayout() {

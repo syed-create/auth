@@ -7,9 +7,9 @@ import {
 import "antd/dist/antd.min.css";
 
 import { routes } from "./routes/routes";
-import RootLayout from "./features/shared/components/navigation/RootLayout";
+import RootLayout from "./features/shared/components/Navigation/RootLayout";
 import { Suspense } from "react";
-import Spinner from "./shared/spinner";
+import Spinner from "./features/shared/components/UIElements/Spinner/Spinner";
 
 function App() {
 	return (

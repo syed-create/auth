@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
-import { logout } from "../../../../utils/base";
+import { logout } from "../../utils/base";
 
 function Header() {
 	const userEmail = useSelector(state => state.userSlice.userEmail);

@@ -1,7 +1,8 @@
 import React from "react";
-import { ValidateEmail, ValidatePassword } from "../../../shared/validation";
 import { Button, Form, Input } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
+
+import { ValidateEmail, ValidatePassword } from "../../shared/utils/validation";
 
 function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 	return (
@@ -18,7 +19,7 @@ function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 			>
 				<Input
 					prefix={<MailOutlined className="text-[#00000040]" />}
-					placeholder="Enter user email"
+					placeholder="Enter email"
 					type="email"
 				/>
 			</Form.Item>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseUrl } from "../../../shared/baseUrl";
+import { baseUrl } from "../../shared/utils/baseUrl";
 
 export const getUsersService = () => {
 	return axios.get(baseUrl + "users").then(res => {
