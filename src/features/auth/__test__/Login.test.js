@@ -42,7 +42,7 @@ describe("Email input validations", () => {
 			target: { value: "" },
 		});
 		fireEvent.blur(emailInputNode);
-		screen.debug();
+		// screen.debug();
 	});
 
 	it("should return undefined if email is valid", async () => {
@@ -53,19 +53,22 @@ describe("Email input validations", () => {
 	it("should throw an error of enter valid email", async () => {
 		const text = "bari@gmai";
 
-		expect(ValidateEmail("", text)).rejects.toMatch(
-			"Please enter a valid email!"
-		);
+		expect(ValidateEmail("", text)).rejects.toMatchObject({
+			message: "Please enter a valid email!",
+		});
 	});
 
 	it("should be able to submit form", () => {
-		const { getByRole } = render(
-			<LoginForm loading={false} onFormSubmit={mockedOnFormSubmit} />
+		const mockedOnSubmit = jest.fn();
+		const { getByTestId } = render(
+			<LoginForm loading={false} onFormSubmit={mockedOnSubmit} />
 		);
-		const buttonNode = getByRole("button");
+
+		const buttonNode = getByTestId("login-btn");
+		screen.debug();
 		expect(buttonNode).toBeInTheDocument();
 		fireEvent.submit(buttonNode);
-		expect(mockedOnFormSubmit).toHaveBeenCalledTimes(1);
+		expect(mockedOnSubmit).toBe(values => {});
 	});
 });
 

@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Trial Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A trial test for creating simple authenticaiton application by using Ant Design, Tailwindcss, Redux toolkit.
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+-   [@syeddanishali](https://github.com/syed-create)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install my-project with npm or with yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  npm install
+  yarn install
+  cd auth
+```
 
-### `npm test`
+## Run Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the project
 
-### `npm run build`
+```bash
+  git clone https://github.com/syed-create/auth.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to the project directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  cd auth
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies
 
-### `npm run eject`
+```bash
+  npm install or yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  checkout to master branch
+  npm run start
+  yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Running Tests
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run tests, run the following command
 
-## Learn More
+```bash
+  npm run test or
+  yarn test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Login
+-   Dashboard
 
-### Code Splitting
+## API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Login user
 
-### Analyzing the Bundle Size
+```http
+  POST https://reqres.in/api/login
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Parameter  | Type     | Description                      |
+| :--------- | :------- | :------------------------------- |
+| `email`    | `string` | **Required**. eve.holt@reqres.in |
+| `password` | `string` | **Required**. cityslicka         |
 
-### Making a Progressive Web App
+#### Get users
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```http
+  GET https://reqres.in/api/users
+```
 
-### Advanced Configuration
+## Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Structure of each feautre is isolated and divided into folders so that it can be used anywhere without any problem.
 
-### Deployment
+**features** and **folder** structer of the modules.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    auth and dashboard folder have this file structure:
+        test: for the test cases
 
-### `npm run build` fails to minify
+        components: for reusable components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        pages: for main routes and pages
+
+        services: have all the api calles
+
+        store:
+            actions: have all the middlewares calling services
+            slice: have reducer
+
+    shared:
+        utils: for all the utility functions that can be share in the whole app and can be manage easily.
+
+        hooks for all the hooks that can be shared anywhere in the app
+
+        components: shared navigation and ui elements for the reusablity of the code
+
+    routes:
+        have all the routes with lazy loading and protected routes.
+
+    store:
+        have all the main slices which are persisted in local storage.

@@ -44,6 +44,7 @@ function LoginForm({ onFormSubmit = () => {}, loading = false }) {
 					type="primary"
 					htmlType="submit"
 					loading={loading}
+					data-testid="login-btn"
 					block
 				>
 					Login
