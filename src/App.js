@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import {
 	BrowserRouter as Router,
 	Navigate,
@@ -6,10 +7,9 @@ import {
 } from "react-router-dom";
 import "antd/dist/antd.min.css";
 
-import { routes } from "./routes/routes";
 import RootLayout from "./features/shared/components/Navigation/RootLayout";
-import { Suspense } from "react";
 import Spinner from "./features/shared/components/UIElements/Spinner/Spinner";
+import { routes } from "./routes/routes";
 
 function App() {
 	return (
